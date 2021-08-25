@@ -24,6 +24,8 @@ jobs:
         with:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
+      - name: Install
+        run: ./gradlew clean
       - name: Build with Gradle
         run: ./gradlew check -i --init-script $THUNDRA_GRADLE_INIT_SCRIPT_PATH
         env:

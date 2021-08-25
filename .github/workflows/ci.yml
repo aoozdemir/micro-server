@@ -25,6 +25,6 @@ jobs:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
       - name: Build with Gradle
-        run: ./gradlew build --init-script $THUNDRA_GRADLE_INIT_SCRIPT_PATH
+        run: ./gradlew check -i --init-script $THUNDRA_GRADLE_INIT_SCRIPT_PATH
         env:
           THUNDRA_AGENT_REPORT_REST_BASEURL: https://collector.thundra.us/v1
